@@ -1,0 +1,31 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Author Detail</h1>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <app-author-details-form></app-author-details-form>
+</div>
+<div class="col-md-6">
+    <div class="col-md-6">
+        <table class="table" style="table-layout: fixed; width: 180%;">
+            <thead class="thead-light">
+                <tr >
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
+                    <th style="width: 10%;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let ad of service.list">
+                    <td style="word-wrap: break-word; overflow: break-word;" (click)="populateForm(ad)">{{ad.FirstName}}</td>
+                    <td style="word-wrap: break-word; overflow: break-word;" (click)="populateForm(ad)">{{ad.LastName}}</td>
+                    <td style="word-wrap: break-word; overflow: break-word;" (click)="populateForm(ad)">{{ad.City}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger"(click)="onDelete(ad.Id)" ></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</div>
